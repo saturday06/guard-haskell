@@ -51,16 +51,16 @@ class ::Guard::Haskell::Repl
   def reload_and_run_matching(pattern = nil)
     if run_command_and_wait_for_result(":reload\n")
       if pattern.nil?
-        run_command_and_wait_for_result(":main --color\n")
+        run_command_and_wait_for_result(":main\n")
       else
-        run_command_and_wait_for_result(":main --color --match #{pattern}\n")
+        run_command_and_wait_for_result(":main --match #{pattern}\n")
       end
     end
   end
 
   def reload_and_rerun
     if run_command_and_wait_for_result(":reload\n")
-      run_command_and_wait_for_result(":main --color --rerun\n")
+      run_command_and_wait_for_result(":main --rerun\n")
     end
   end
 
